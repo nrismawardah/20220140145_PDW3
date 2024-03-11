@@ -9,15 +9,40 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: rgb(178, 206, 236);
+    background-color: rgb(255, 255, 255);
 }
 
 .card {
+    position: relative;
     width: 550px;
 }
 
 .card img {
     width: 30rem;
-    border: 5px solid#dae6f4;
     border-radius: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.content {
+    position: relative; /* Tetap menggunakan posisi relatif */
+    z-index: 1; /* Memastikan teks muncul di atas overlay */
+    color: rgb(0, 0, 0); /* Warna teks */
+    text-align:center;
+    margin-top: 15px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(178, 206, 236); /* Warna latar belakang semi transparan */
+    border-radius: 20px;
+    z-index: 0; /* Memastikan kotak berada di belakang gambar dan teks */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
